@@ -51,6 +51,15 @@ h1 {
     background-color: #ccc;
 }
 
+.bg {
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    opacity: 0.4;
+}
+
 .card-active {
     cursor: pointer;
     text-align: center;

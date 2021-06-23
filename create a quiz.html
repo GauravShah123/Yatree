@@ -23,36 +23,11 @@
                 <input type="text" placeholder="Option D" id="" class="option optionD">
             </div>
         </div>
-        <div class="question-div">
-            <input type="text" name="Question" class="question" placeholder="Question">
-            <div class="options-grid">
-                <input type="text" placeholder="Option A" id="" class="option optionA">
-                <input type="text" placeholder="Option B" id="" class="option optionB">
-                <input type="text" placeholder="Option C" id="" class="option optionC">
-                <input type="text" placeholder="Option D" id="" class="option optionD">
-            </div>
-        </div>
-        <div class="question-div">
-            <input type="text" name="Question" class="question" placeholder="Question">
-            <div class="options-grid">
-                <input type="text" placeholder="Option A" id="" class="option optionA">
-                <input type="text" placeholder="Option B" id="" class="option optionB">
-                <input type="text" placeholder="Option C" id="" class="option optionC">
-                <input type="text" placeholder="Option D" id="" class="option optionD">
-            </div>
-        </div>
-        <div class="question-div">
-            <input type="text" name="Question" class="question" placeholder="Question">
-            <div class="options-grid">
-                <input type="text" placeholder="Option A" id="" class="option optionA">
-                <input type="text" placeholder="Option B" id="" class="option optionB">
-                <input type="text" placeholder="Option C" id="" class="option optionC">
-                <input type="text" placeholder="Option D" id="" class="option optionD">
-            </div>
-        </div>
+
 
     </div>
     <button onclick="newquestion()" class="addq">+</button>
+    <button onclick="removequestion()" class="removeq">-</button>
     <button onclick="save()" class="save">Save</button>
     <style>
         body {
@@ -72,6 +47,12 @@
             position: fixed;
             bottom: 30px;
             left: 30px;
+        }
+        
+        .removeq {
+            position: fixed;
+            bottom: 30px;
+            left: 140px;
         }
         
         .save {
@@ -100,8 +81,23 @@
         }
     </style>
     <script>
-        function newquestion() {
+        const questionDiv = `<div class="question-div">
+            <input type="text" name="Question" class="question" placeholder="Question">
+            <div class="options-grid">
+                <input type="text" placeholder="Option A" id="" class="option optionA">
+                <input type="text" placeholder="Option B" id="" class="option optionB">
+                <input type="text" placeholder="Option C" id="" class="option optionC">
+                <input type="text" placeholder="Option D" id="" class="option optionD">
+            </div>
+        </div>`;
+        var totalDiv = document.querySelector('.total-div')
 
+        function newquestion() {
+            totalDiv.innerHTML += questionDiv;
+        }
+
+        function removequestion() {
+            totalDiv.innerHTML -= questionDiv;
         }
     </script>
 </body>
